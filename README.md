@@ -1,2 +1,4 @@
 # curso-github-actions
-## Estou editando este arquivo via Github Dev!
+
+Este repositório contém todos os arquivos utilizados e criados durante o curso de Github Action
+
