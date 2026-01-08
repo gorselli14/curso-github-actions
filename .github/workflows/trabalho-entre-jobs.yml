@@ -38,7 +38,7 @@ jobs:
         run: ls -lha && ls ./strigus-download/
 
       - name: Move aquivo mensagem diretorio
-        run: mv strigus-download/mensagem.txt . && em -rf ./strigus-download
+        run: mv strigus-download/mensagem.txt . && rm -rf ./strigus-download
       
       - name: Conteudo diretorio
         run: ls -lha
