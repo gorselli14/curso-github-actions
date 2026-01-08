@@ -18,7 +18,7 @@ jobs:
         run: echo "Estou fazendo o curso de Github Actions" > ${{ github.workspace }}/mensagem.txt 
         #forma de salvar o arquivo dentro do workspace do git para compartilhar entre os jobs
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4 #action para fazer upload de arquivos
         with:
           name: strigus-upload #nome do diretorio
           path: ${{ github.workspace }}/mensagem.txt #caminho onde o diretório será salvo
@@ -30,10 +30,10 @@ jobs:
       - name: Conteudo diretorio
         run: ls -lha
 
-      - uses: actions/download-artifact@v4 #download do arquivo criado pelo job anterior
+      - uses: actions/download-artifact@v4 #action para download do arquivo criado pelo job anterior
         with:
-          name: strigus-upload
-          path: strigus-download
+          name: strigus-upload #nome do diretorio de origem do arquivo no workspace do git
+          path: strigus-download #nome do diretorio de destino do arquivo dentro da maquina onde o job_2 esta rodando
       
       - name: Conteudo diretorio
         run: ls -lha && echo "conteudo diretorio strigus-download" && ls -lha ./strigus-download/
