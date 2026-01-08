@@ -8,7 +8,7 @@ on:
 # on > push > branches> workflow será executado sempre que for dado um commit na branche main
 
 jobs:
-  job_1:  
+  baca_job_1:  
     runs-on: ubuntu-latest  
     steps:
       - name: Confere versao do Ubuntu
@@ -17,7 +17,7 @@ jobs:
       - name: Exibir mensagem
         run: echo "Estou fazendo o curso de Github Actions" > mensagem.txt
 
-  job_2:  
+  baca_job_2:  
     runs-on: ubuntu-latest  
     steps:
       - name: Conteudo diretorio
