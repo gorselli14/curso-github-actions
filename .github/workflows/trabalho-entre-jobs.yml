@@ -15,14 +15,34 @@ jobs:
         run: cat /etc/os-release
 
       - name: Exibir mensagem
-        run: echo "Estou fazendo o curso de Github Actions" > mensagem.txt
+        run: echo "Estou fazendo o curso de Github Actions" > ${{ github.workspace }}/mensagem.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: strigus-upload
+          path: ${{ github.workspace }}/mensagem.txt
 
   baca_job_2:  
-    runs-on: ubuntu-latest  
+    runs-on: ubuntu-latest
+    needs: baca_job_1 #executa job_2 somente após execução do job_1  
     steps:
       - name: Conteudo diretorio
         run: ls -lha
-    
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: strigus-upload
+          path: strigus-download
+      
+      - name: Conteudo diretorio
+        run: ls -lha && ls ./strigus-download/
+
+      - name: Move aquivo mensagem diretorio
+        run: mv strigus-download/mensagem.txt . && em -rf ./strigus-download
+      
+      - name: Conteudo diretorio
+        run: ls -lha
+      
       - name: Le conteudo do arquivo
         run: cat mensagem.txt
   # steps são os passos que serão executados dentro do workflow (cuidado com a identeção do run, pois deve estar no mesmo nivel do name)
