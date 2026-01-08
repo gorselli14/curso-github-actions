@@ -8,25 +8,22 @@ on:
 # on > push > branches> workflow será executado sempre que for dado um commit na branche main
 
 jobs:
-  bacaflow_entre_jobs:
-# jobs > bacaflow é o nome do job > runs-on executa o workflow no ambiente ubuntu na última versão
-
   job_1:  
-      runs-on: ubuntu-latest  
-      steps:
+    runs-on: ubuntu-latest  
+    steps:
       - name: Confere versao do Ubuntu
         run: cat /etc/os-release
 
       - name: Exibir mensagem
         run: echo "Estou fazendo o curso de Github Actions" > mensagem.txt
-  
+
   job_2:  
-      runs-on: ubuntu-latest  
-      steps:
+    runs-on: ubuntu-latest  
+    steps:
       - name: Conteudo diretorio
         run: ls -lha
     
       - name: Le conteudo do arquivo
         run: cat mensagem.txt
-    # steps são os passos que serão executados dentro do workflow (cuidado com a identeção do run, pois deve estar no mesmo nivel do name)
-    
+  # steps são os passos que serão executados dentro do workflow (cuidado com a identeção do run, pois deve estar no mesmo nivel do name)
+      
