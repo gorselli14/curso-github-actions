@@ -1,4 +1,4 @@
-name: Primeiro Workflow curso Github Actions
+name: Vendo arquivo compartilhado
 # nome do workflow
 
 on:
@@ -8,7 +8,7 @@ on:
 # on > push > branches> workflow será executado sempre que for dado um commit na branche main
 
 jobs:
-  bacaflow:
+  bacaflow_2:
     runs-on: ubuntu-latest
 # jobs > bacaflow é o nome do job > runs-on executa o workflow no ambiente ubuntu na última versão
 

@@ -2,7 +2,7 @@ name: Primeiro Workflow curso Github Actions
 # nome do workflow
 
 on:
-  workflow dispatch
+  workflow_dispatch
 # on > push > branches> workflow será quando der o play manualmente
 
 jobs:
