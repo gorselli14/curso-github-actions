@@ -15,12 +15,13 @@ jobs:
         run: cat /etc/os-release
 
       - name: Exibir mensagem
-        run: echo "Estou fazendo o curso de Github Actions" > ${{ github.workspace }}/mensagem.txt
+        run: echo "Estou fazendo o curso de Github Actions" > ${{ github.workspace }}/mensagem.txt 
+        #forma de salvar o arquivo dentro do workspace do git para compartilhar entre os jobs
 
       - uses: actions/upload-artifact@v4
         with:
-          name: strigus-upload
-          path: ${{ github.workspace }}/mensagem.txt
+          name: strigus-upload #nome do diretorio
+          path: ${{ github.workspace }}/mensagem.txt #caminho onde o diretório será salvo
 
   baca_job_2:  
     runs-on: ubuntu-latest
@@ -29,13 +30,13 @@ jobs:
       - name: Conteudo diretorio
         run: ls -lha
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4 #download do arquivo criado pelo job anterior
         with:
           name: strigus-upload
           path: strigus-download
       
       - name: Conteudo diretorio
-        run: ls -lha && ls ./strigus-download/
+        run: ls -lha #&& ls ./strigus-download/
 
       - name: Move aquivo mensagem diretorio
         run: mv strigus-download/mensagem.txt . && rm -rf ./strigus-download
