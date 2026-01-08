@@ -36,7 +36,7 @@ jobs:
           path: strigus-download
       
       - name: Conteudo diretorio
-        run: ls -lha #&& ls ./strigus-download/
+        run: ls -lha && echo "conteudo diretorio strigus-download" && ls ./strigus-download/
 
       - name: Move aquivo mensagem diretorio
         run: mv strigus-download/mensagem.txt . && rm -rf ./strigus-download
