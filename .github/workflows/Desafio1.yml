@@ -28,7 +28,7 @@ jobs:
             - name: Executa docker image
               run: docker images
 
-            - uses: actions/scout-action@v1.18.2
+            - uses: docker/scout-action@v1.18.2
               with:
                 command: cves
                 image: local://${{ github.event.inputs.docker_image }}
