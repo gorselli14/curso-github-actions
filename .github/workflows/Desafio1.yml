@@ -27,6 +27,6 @@ jobs:
                   sh -c "echo 'Container Alpine em execução!' && cat /etc/os-release"
             
             - name: Executa docker image
-              run: docker container ls
+              run: docker ps
             
 
