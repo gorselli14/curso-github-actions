@@ -4,9 +4,9 @@ on:
     workflow_dispatch:
         inputs:
             docker_image:
-                description: Alpine:Latest
+                description: Imagem docker a ser executada
                 required: true
-                #default: 'alpine'
+                default: Alpine:latest
 
 jobs:
     #inicio da execução dos jobs
@@ -17,9 +17,14 @@ jobs:
 
         steps:
         #primeiro step do job
-            - name: versao Ubuntu
+            - name: versao Ubuntu (runner)
               run: cat /etc/os-release
             
+            - name: Executa docker image
+              run: |
+                echo "Imagem selecionada: ${{ github.event.inputs.docker_image }}" 
+                docker run --rm ${{ github.event.inputs.docker_image }}
+                  sh -c "echo 'Container Alpine em execução!' && cat /etc/os-release"
 
             
 
