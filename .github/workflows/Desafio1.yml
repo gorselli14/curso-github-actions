@@ -23,8 +23,8 @@ jobs:
             - name: Executar container Alpine
               run: |
                 echo "Imagem selecionada: ${{ github.event.inputs.docker_image }}"
-                docker run --rm ${{ github.event.inputs.docker_image }} \
-                  sh -c "echo 'Container Alpine em execução!' && cat /etc/os-release"
+                docker run --rm ${{ github.event.inputs.docker_image }}
+                  sh -c "while true; do sleep 5; done"
             
             - name: Executa docker image
               run: docker ps
