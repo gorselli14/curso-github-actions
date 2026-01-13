@@ -20,12 +20,19 @@ jobs:
             - name: versao Ubuntu (runner)
               run: cat /etc/os-release
             
-            - name: Subir container em background
+            - name: Subir container
               run: |
                 echo "Imagem selecionada: ${{ github.event.inputs.docker_image }}"
                 docker run --rm ${{ github.event.inputs.docker_image }}
             
             - name: Executa docker image
               run: docker images
-            
+
+            - name: Docker Scout CVEs
+              uses: docker/scout-action@v1.18.2
+              with:
+                command: cves
+                image: local://${{ github.event.inputs.docker_image }}
+                only-severities: critical,high
+                summary: true
 
