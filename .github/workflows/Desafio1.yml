@@ -1,0 +1,25 @@
+name: Desafio aula 1
+    
+on:
+    workflow_dispatch:
+        inputs:
+            docker_image:
+                description: Alpine:Latest
+                required: true
+                #default: 'alpine'
+
+jobs:
+    #inicio da execução dos jobs
+    bacaflow_1:
+        #nome do job
+        runs-on: ubuntu-latest
+        #job rodando em um runner ubuntu
+
+        steps:
+        #primeiro step do job
+            - name: versao Ubuntu
+              run: cat /etc/os-release
+            
+
+            
+
