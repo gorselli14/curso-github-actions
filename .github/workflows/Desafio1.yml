@@ -27,6 +27,6 @@ jobs:
                   sh -c "while true; do sleep 5; done"
             
             - name: Executa docker image
-              run: docker ps
+              run: docker ps -a
             
 
