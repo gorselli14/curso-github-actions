@@ -20,8 +20,11 @@ jobs:
             - name: versao Ubuntu (runner)
               run: cat /etc/os-release
             
-            - name: Executar container Alpine
-              run: docker run --rm ${{ github.event.inputs.docker_image }}
+            - name: Subir container em background
+              run: |
+                docker run -d --name alpine_teste \
+                  ${{ github.event.inputs.docker_image }} \
+                  sh -c "while true; do sleep 5; done"
             
             - name: Executa docker image
               run: docker ps
