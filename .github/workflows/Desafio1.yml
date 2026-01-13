@@ -6,7 +6,7 @@ on:
             docker_image:
                 description: Alpine:Latest
                 required: true
-                default: 'alpine'
+                #default: 'alpine'
 
 jobs:
     #inicio da execução dos jobs
