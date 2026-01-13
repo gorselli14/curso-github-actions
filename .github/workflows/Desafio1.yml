@@ -6,7 +6,7 @@ on:
             docker_image:
                 description: Imagem docker a ser executada
                 required: true
-                #default: Alpine:latest
+                default: alpine:latest
 
 jobs:
     #inicio da execução dos jobs
@@ -21,10 +21,6 @@ jobs:
               run: cat /etc/os-release
             
             - name: Executa docker image
-              run: |
-                echo "Imagem selecionada: ${{ github.event.inputs.docker_image }}" 
-                docker run --rm ${{ github.event.inputs.docker_image }}
-                  sh -c "echo 'Container Alpine em execução!' && cat /etc/os-release"
-
+              run: docker container ls
             
 
