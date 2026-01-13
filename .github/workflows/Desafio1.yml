@@ -22,9 +22,8 @@ jobs:
             
             - name: Subir container em background
               run: |
-                docker run -d --name alpine_teste \
-                  ${{ github.event.inputs.docker_image }} \
-                  sh -c "while true; do sleep 5; done"
+                echo "Imagem selecionada: ${{ github.event.inputs.docker_image }}"
+                docker run --rm ${{ github.event.inputs.docker_image }}
             
             - name: Executa docker image
               run: docker images
