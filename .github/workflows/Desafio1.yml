@@ -20,6 +20,12 @@ jobs:
             - name: versao Ubuntu (runner)
               run: cat /etc/os-release
             
+            - name: Executar container Alpine
+              run: |
+                echo "Imagem selecionada: ${{ github.event.inputs.docker_image }}"
+                docker run --rm ${{ github.event.inputs.docker_image }} \
+                  sh -c "echo 'Container Alpine em execução!' && cat /etc/os-release"
+            
             - name: Executa docker image
               run: docker container ls
             
