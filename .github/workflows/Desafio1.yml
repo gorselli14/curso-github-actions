@@ -40,7 +40,7 @@ jobs:
               #Quinto step executa o Docker Scout e mostra as vulnerabilidades da imagem usada
             - uses: docker/scout-action@v1.18.2
               with:
-                command: quickview,cves,recommendations
+                command: quickview,cves
                 image: ${{ github.event.inputs.docker_image }}
                 only-severities: critical,high
                 summary: true
