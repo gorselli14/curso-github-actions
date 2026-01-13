@@ -6,7 +6,7 @@ on:
             docker_image:
                 description: Imagem docker a ser executada
                 required: true
-                default: Alpine:latest
+                #default: Alpine:latest
 
 jobs:
     #inicio da execução dos jobs
