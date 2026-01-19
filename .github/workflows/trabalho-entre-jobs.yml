@@ -2,9 +2,7 @@ name: Testando arquivos entre Jobs
 # nome do workflow
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch
 # on > push > branches> workflow será executado sempre que for dado um commit na branche main
 
 jobs:
