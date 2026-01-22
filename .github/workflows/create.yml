@@ -1,4 +1,4 @@
-name: Testando a regra de create
+name: Testando a regra do trigger Create
 
 on:
   create
@@ -9,5 +9,5 @@ jobs:
 
     steps:
       - name: Aviso sobre criação de branches ou tags
-        runs: echo "Uma nova Branch ou Tag foi criada no repositório"
+        run: echo "Uma nova Branch ou Tag foi criada no repositório"
   
