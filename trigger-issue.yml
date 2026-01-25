@@ -1,0 +1,12 @@
+name: Teste trigger Issue
+
+on:
+  issue: 
+    types: [opened, editer, deleted]
+
+jobs:
+  Teste-trigger-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Teste trigger issues
+        run: echo "Uma issue foi aberta/editada/deletada"
