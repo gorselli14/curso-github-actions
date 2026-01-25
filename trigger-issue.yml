@@ -5,7 +5,7 @@ on:
     types: [opened, editer, deleted]
 
 jobs:
-  Teste-trigger-issue:
+  teste-trigger-issue:
     runs-on: ubuntu-latest
     steps:
       - name: Teste trigger issues
