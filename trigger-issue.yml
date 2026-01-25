@@ -1,7 +1,7 @@
-name: Teste trigger Issue
+name: Teste trigger Issues
 
 on:
-  issue: 
+  issues: 
     types: [opened, editer, deleted]
 
 jobs:
