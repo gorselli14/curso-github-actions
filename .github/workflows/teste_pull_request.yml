@@ -4,7 +4,7 @@ on:
     pull_request: 
         types: [opened, edited, deleted, reopened]
         branches:
-            - 'main/**'
+            - 'main*'
 jobs:
     teste_trigger_pull_requests:
         runs-on: ubuntu-latest
