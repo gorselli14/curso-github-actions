@@ -10,5 +10,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Executar após pull request
-              run: echo "Uma pull request foi aberta/editada/deletada/reaberta"
+              run: echo "Uma pull request foi aberta/editada/deletada/reaberta com destino a branch main"
 
