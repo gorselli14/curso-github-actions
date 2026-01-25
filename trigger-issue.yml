@@ -2,7 +2,7 @@ name: Teste trigger Issues
 
 on:
   issues: 
-    types: [opened, editer, deleted]
+    types: [opened, edited, deleted]
 
 jobs:
   teste-trigger-issue:
