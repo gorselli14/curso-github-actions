@@ -1,12 +1,12 @@
-name: Teste trigger Issues
+name: Criando nosso trigger issue
 
 on:
-  issues: 
+  issues:
     types: [opened, edited, deleted]
 
 jobs:
-  teste-trigger-issue:
+  job-issue:
     runs-on: ubuntu-latest
     steps:
-      - name: Teste trigger issues
+      - name: Printa issue
         run: echo "Uma issue foi aberta/editada/deletada"
