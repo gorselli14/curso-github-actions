@@ -1,0 +1,13 @@
+name: Teste de trigger Discussion
+
+on:
+    discussion:
+        types: [created, edited, answered]
+
+jobs:
+    test_trigger_discussion:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Teste trigger discussion
+              run: echo "Esse job foi iniciado por um trigger de discussion tipo criada/alterada/respondida"
