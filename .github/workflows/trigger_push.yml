@@ -1,0 +1,16 @@
+name: Teste Trigger Push
+
+on:
+    push:
+        branches: #define em quais branches o push deve acontecer para ser gatilho do workflow
+            - 'main'
+            - 'staging'
+        patchs: #define quais tipos de arquivo poderm ser gatilho para iniciar o workflow
+            - '**.tf'
+
+jobs:
+    trigger-push:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print Push
+              run: echo "Um push foi feito e disparou essa ação do workflow"

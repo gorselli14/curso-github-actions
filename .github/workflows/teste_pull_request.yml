@@ -1,0 +1,14 @@
+name: Teste trigger Pull Requests
+
+on:
+    pull_request: 
+        types: [opened, edited, deleted, reopened]
+        branches:
+            - 'main*'
+jobs:
+    teste_trigger_pull_requests:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Executar após pull request
+              run: echo "Uma pull request foi aberta/editada/deletada/reaberta com destino a branch main"
+

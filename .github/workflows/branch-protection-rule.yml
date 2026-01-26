@@ -1,0 +1,18 @@
+name: Testando regra de protection rule
+#nome do workflow
+
+on: #definição da trigger para execução do workflow
+    branch_protection_rule: #essa trigger dispara a execução do workflow abaixo, quando houver alteração de uma regra de proteção da branch
+        types: [created, edited, deleted]
+
+jobs: #job para executar um echo de uma msg em uma VM ubuntu
+    print-modification-of-rules: #job name
+        runs-on: ubuntu-latest
+        steps:
+
+            - name: Avisa sobre modificações
+              run: echo "Este workflow foi executado pois uma regra de Branch Protection foi alterada"
+
+
+
+    

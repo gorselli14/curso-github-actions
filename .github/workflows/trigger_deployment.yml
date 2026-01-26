@@ -1,0 +1,12 @@
+name: Teste trigger Deployment
+
+on:
+    deployment
+
+jobs:
+    Job_test_deployment:
+        runs-on: ubuntu-latest
+        steps:
+            
+            - name: Print Deployment
+              run: echo "Esse job foi disparado por um deployment externo"

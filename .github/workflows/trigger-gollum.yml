@@ -1,0 +1,12 @@
+name: Teste Trigger Gollum
+
+on:
+    gollum:
+
+jobs:
+    teste-trigger-gollum:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Teste Trigger Gollum
+              run: echo "Essa ação foi disparada por um trigger Gollum por uma edição na wiki"
