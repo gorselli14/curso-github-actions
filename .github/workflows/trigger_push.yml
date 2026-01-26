@@ -13,4 +13,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Print Push
-              run: echo "Pum push foi feito e disparou essa ação do workflow"
+              run: echo "Um push foi feito e disparou essa ação do workflow"
