@@ -1,0 +1,12 @@
+name: Test Trigger Schedule
+
+on:
+    schedule:
+        - cron: 20 07 * * 1
+jobs:
+    trigger-schedule:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Mostra horário 
+              run: echo 'Schedule executado com sucesso, agora são $(date) formato de horário UTC'
+
