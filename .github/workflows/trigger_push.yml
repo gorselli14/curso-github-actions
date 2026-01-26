@@ -5,7 +5,7 @@ on:
         branches: #define em quais branches o push deve acontecer para ser gatilho do workflow
             - 'main'
             - 'staging'
-        patchs: #define quais tipos de arquivo poderm ser gatilho para iniciar o workflow
+        paths: #define quais tipos de arquivo poderm ser gatilho para iniciar o workflow
             - '**.tf'
 
 jobs:
