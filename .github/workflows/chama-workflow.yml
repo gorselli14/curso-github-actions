@@ -1,0 +1,14 @@
+name: Workflow Dispatch
+
+on:
+    workflow_dispatch:
+        inputs:
+            nome-do-curso-enviado:
+                required: true
+                type: string
+
+jobs:
+    workflow-call:
+        uses: .github/workflows/trigger-call.yml #essa 
+        with:
+            nome-do-curso-enviado: ${{github.event.inputs.nome-do-curso-enviado}}
