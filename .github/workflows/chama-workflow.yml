@@ -1,4 +1,4 @@
-name: Workflow Dispatch
+name: Chama Workflow Compartilhado
 
 on:
     workflow_dispatch:
@@ -9,6 +9,6 @@ on:
 
 jobs:
     workflow-call:
-        uses: .github/workflows/trigger-call.yml #essa 
+        uses: ./.github/workflows/trigger-call.yml #essa 
         with:
-            nome-do-curso-recebido: ${{github.event.inputs.nome-do-curso-enviado}}
+            nome-do-curso-recebido: ${{ inputs.nome-do-curso-enviado}}
