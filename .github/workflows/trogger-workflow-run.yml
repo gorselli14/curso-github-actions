@@ -7,8 +7,8 @@ on:
             - completed
 
 jobs:
-    workflow-executado:
-        runs-on: ubuntu-lates
+    aviso-workflow-executado:
+        runs-on: ubuntu-latest
         steps:
             - name: Chama Workflow a partir do run
               run: echo "O Workflow compartilhado 'Chama Workflow Compartilhado' terminou de ser executado"
