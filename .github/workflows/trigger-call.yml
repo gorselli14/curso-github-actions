@@ -8,8 +8,8 @@ on:
                 type: string
 
 jobs:
-    nome-do-curso:
+    chama-workflow:
         runs-on: ubuntu-latest
         steps:
                 - name: Informe o nome do curso
-                  run: echo "O nome do seu curso é ${{ inputs.nome-do-curso-nome-do-curso-recebido }}"
+                  run: echo "O nome do seu curso é ${{ inputs.nome-do-curso-recebido }}"
