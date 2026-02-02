@@ -1,0 +1,14 @@
+name: Teste Trigger Run
+
+on:
+    workflow_run:
+        workflows: [Chama Workflow Compartilhado]
+        types:
+            - completed
+
+jobs:
+    workflow-executado:
+        runs-on: ubuntu-lates
+        steps:
+            - name: Chama Workflow a partir do run
+              run: echo "O Workflow compartilhado 'Chama Workflow Compartilhado' terminou de ser executado"
